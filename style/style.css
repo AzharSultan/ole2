@@ -1,5 +1,5 @@
 <style>
-html {
+/*html {
   margin:0px;
   padding:0px;
   height: 100%;
@@ -10,7 +10,7 @@ body {
   padding:0px;
   height: 100%;
 }
-
+*/
 a {
   text-decoration: none;
 }
@@ -39,7 +39,7 @@ a.active {
 #header a:last-child {
     margin-right: 0;
 }
-
+/*
 #map {
   position: absolute;
   left: 0;
@@ -47,7 +47,7 @@ a.active {
   bottom: 0;
   right: 0;
  }
-
+*/
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
