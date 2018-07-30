@@ -135,6 +135,12 @@ class Editor {
     this.editFeature = feature;
   }
 
+  setSource(src) {
+    this.controls.forEach((c) => {
+      c.setSource(src);
+    });
+  }
+
   /**
    * Returns the feature that is currently edited.
    * @returns {ol.Feature|null} The edit feature.
