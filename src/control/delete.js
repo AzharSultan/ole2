@@ -25,9 +25,29 @@ class DeleteControl extends Control {
      * @type {ol.interaction.Select}
      * @private
      */
+
     this.selectInteraction = new ol.interaction.Select({
       source: this.source,
       multi: options.multi || false,
+    });
+
+    /**
+     * Select Interaction to clear and remove features
+     * @private
+     */
+    this.selectInteraction.on('select', (evt) => {
+      evt.selected.forEach((f) => {
+        this.source.removeFeature(f);
+        this.selectInteraction.getFeatures().clear();
+      });
+    });
+    this.multi = options.multi;
+  }
+
+  setSource(src) {
+    this.selectInteraction = new ol.interaction.Select({
+      source: src,
+      multi: this.multi || false,
     });
 
     /**

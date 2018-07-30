@@ -44,19 +44,18 @@ class DrawControl extends Control {
       features: options.features,
       source: options.source,
     });
-    this.features = options.features;
-    this.source = options.source;
     this.type = options.type;
+    this.features = options.features;
   }
 
-
-  setSource(sn) {
+  setSource(src) {
     this.drawInteraction = new ol.interaction.Draw({
       type: this.type || 'Point',
       features: this.features,
-      source: sn,
+      source: src,
     });
   }
+
   /**
    * @inheritdoc
    */

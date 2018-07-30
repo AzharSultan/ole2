@@ -34,8 +34,17 @@ class BufferControl extends Control {
       hitTolerance: options.hitTolerance || 10,
       multi: typeof (options.multi) === 'undefined' ? true : options.multi,
     });
+    this.hitTolerance = options.hitTolerance;
+    this.multi = options.multi;
   }
 
+  setSource(src) {
+    this.selectInteraction = new ol.interaction.Select({
+      source: src,
+      hitTolerance: this.hitTolerance || 10,
+      multi: typeof (this.multi) === 'undefined' ? true : this.multi,
+    });
+  }
   /**
    * @inheritdoc
    */

@@ -109,6 +109,9 @@ class CadControl extends Control {
     this.standalone = false;
   }
 
+  setSource(src) {
+    this.source = src;
+  }
   /**
    * @inheritdoc
    */

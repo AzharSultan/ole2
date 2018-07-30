@@ -32,6 +32,12 @@ class CategoryControl extends Control {
     });
   }
 
+  setSource(src) {
+    this.selectInteraction = new ol.interaction.Select({
+      source: src,
+      features: this.features,
+    });
+  }
   /**
    * @inheritdoc
    */

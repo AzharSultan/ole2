@@ -20,7 +20,7 @@ class TopologyControl extends Control {
       className: 'ole-control-topology',
       image: delSVG,
     }, options));
-
+    this.hitTolerance = options.hitTolerance;
     /**
      * @type {ol.interaction.Select}
      * @private
@@ -31,6 +31,7 @@ class TopologyControl extends Control {
       source: this.source,
       multi: true,
     });
+    
 
     this.selectInteraction.on('select', () => {
       const feats = this.selectInteraction.getFeatures();
@@ -44,6 +45,26 @@ class TopologyControl extends Control {
     });
   }
 
+  setSource(src) {
+    this.selectInteraction = new ol.interaction.Select({
+      toggleCondition: () => true,
+      hitTolerance: this.hitTolerance || 10,
+      source: src,
+      multi: true,
+    });
+    
+
+    this.selectInteraction.on('select', () => {
+      const feats = this.selectInteraction.getFeatures();
+
+      try {
+        this.applyTopologyOperation(feats.getArray());
+      } catch (ex) {
+        Util.logError('Unable to process features.');
+        feats.clear();
+      }
+    });
+  }
   /**
    * Apply a topology operation for given features.
    * @param {Array.<ol.Feature>} features Features.
