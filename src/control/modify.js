@@ -40,6 +40,21 @@ class ModifyControl extends Control {
     });
   }
 
+  setSource(src) {
+    this.selectInteraction = new ol.interaction.Select({
+      source: src,
+      features: this.features,
+    });
+
+    /**
+     * @type {ol.interaction.Modify}
+     * @private
+     */
+    this.modifyInteraction = new ol.interaction.Modify({
+      features: this.selectInteraction.getFeatures(),
+    });
+  }
+
   /**
    * @inheritdoc
    */
