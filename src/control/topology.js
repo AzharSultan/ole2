@@ -31,7 +31,6 @@ class TopologyControl extends Control {
       source: this.source,
       multi: true,
     });
-    
 
     this.selectInteraction.on('select', () => {
       const feats = this.selectInteraction.getFeatures();
@@ -52,7 +51,6 @@ class TopologyControl extends Control {
       source: src,
       multi: true,
     });
-    
 
     this.selectInteraction.on('select', () => {
       const feats = this.selectInteraction.getFeatures();

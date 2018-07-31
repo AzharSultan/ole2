@@ -136,6 +136,10 @@ class RotateControl extends Control {
     }
   }
 
+  setSource(src) {
+    this.source = src;
+  }
+
   /**
    * @inheritdoc
    */

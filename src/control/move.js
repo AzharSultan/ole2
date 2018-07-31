@@ -125,6 +125,10 @@ class MoveControl extends Control {
     return false;
   }
 
+  setSource(src) {
+    this.source = src;
+  }
+
   /**
    * @inheritdoc
    */

@@ -45,6 +45,7 @@ class DeleteControl extends Control {
   }
 
   setSource(src) {
+    this.source = src;
     this.selectInteraction = new ol.interaction.Select({
       source: src,
       multi: this.multi || false,
