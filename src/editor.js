@@ -137,6 +137,7 @@ class Editor {
 
   setSource(src) {
     this.controls.forEach((c) => {
+      c.deactivate(true);
       c.setSource(src);
     });
   }
